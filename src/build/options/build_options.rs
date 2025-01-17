@@ -35,7 +35,7 @@ pub struct BuildOptions {
 
     /// Whether to format the generated file or not (uses rustfmt).
     ///
-    /// Defaults to false.
+    /// Defaults to true.
     pub format: bool,
 }
 
@@ -48,7 +48,7 @@ impl Default for BuildOptions {
             prefix: "msg_".to_string(),
             indentation: "    ".to_string(),
             default_language: "en".to_string(),
-            format: false,
+            format: true,
         }
     }
 }
@@ -84,8 +84,8 @@ impl BuildOptions {
         self
     }
 
-    pub fn with_format(mut self) -> Self {
-        self.format = true;
+    pub fn without_format(mut self) -> Self {
+        self.format = false;
         self
     }
 }

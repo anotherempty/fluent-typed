@@ -92,6 +92,7 @@ fn test_format_generated_rust_file() {
         .with_ftl_output(ftl_opts)
         .with_output_file_path("src/tests/gen/test_unformated_generated_rust_file_gen.rs")
         .with_default_language("en-gb")
+        .without_format()
         .with_prefix("");
 
     Builder::load(options).unwrap().generate().unwrap();
@@ -110,8 +111,7 @@ fn test_format_generated_rust_file() {
         .with_ftl_output(ftl_opts)
         .with_output_file_path("src/tests/gen/test_format_generated_rust_file_gen.rs")
         .with_default_language("en-gb")
-        .with_prefix("")
-        .with_format();
+        .with_prefix("");
 
     Builder::load(options).unwrap().generate().unwrap();
 
